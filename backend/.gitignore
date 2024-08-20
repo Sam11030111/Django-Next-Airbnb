@@ -1,0 +1,3 @@
+djangobnb_backend/env
+.env.dev
+docker-compose.yml
