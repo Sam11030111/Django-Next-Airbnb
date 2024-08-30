@@ -6,7 +6,7 @@ import { getUserId } from "@/app/lib/actions";
 import apiService from "@/app/sevices/apiService";
 
 const LandlordDetailpage = async ({ params }: { params: { id: string }}) => {
-  const landlord = await apiService.get(`/api/auth/${params.id}`);
+  const landlord = await apiService.get(`/api/auth/${params.id}`);  
   const userId = await getUserId();
 
   return (
@@ -25,7 +25,7 @@ const LandlordDetailpage = async ({ params }: { params: { id: string }}) => {
                     <h1 className="mt-6 text-2xl">{landlord.name}</h1>
 
                     {userId != params.id && (
-                        <ContactButton />
+                        <ContactButton userId={userId} landlordId={landlord.id} />
                     )}
                 </div>
             </aside>
