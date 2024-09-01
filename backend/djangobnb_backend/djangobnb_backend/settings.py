@@ -25,7 +25,10 @@ AUTH_USER_MODEL = 'useraccount.User'
 
 SITE_ID = 1
 
-WEBSITE_URL = 'http://localhost:8000'
+if DEBUG:
+    WEBSITE_URL = 'http://localhost:8000'
+else:
+    WEBSITE_URL = 'http://159.203.41.135:1337'
 
 CHANNEL_LAYERS = {
     'default': {
@@ -62,7 +65,23 @@ CORS_ALLOW_ALL_ORIGINS = True
 
 CORS_ALLOWED_ORIGINS = [
     'http://127.0.0.1:8000',
-    'http://127.0.0.1:3000'
+    'http://127.0.0.1:3000',
+    'http://159.203.41.135',
+    'http://159.203.41.135:1337'
+]
+
+CORS_TRUSTED_ORIGINS = [
+    'http://127.0.0.1:8000',
+    'http://127.0.0.1:3000',
+    'http://159.203.41.135',
+    'http://159.203.41.135:1337'
+]
+
+CORS_ORIGINS_WHITELIST = [
+    'http://127.0.0.1:8000',
+    'http://127.0.0.1:3000',
+    'http://159.203.41.135',
+    'http://159.203.41.135:1337'
 ]
 
 REST_AUTH = {

@@ -1,3 +1,4 @@
 djangobnb_backend/env
 .env.dev
 docker-compose.yml
+docker-compose.prod.yml
