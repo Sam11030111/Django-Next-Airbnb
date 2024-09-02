@@ -1,5 +1,3 @@
-from chat.token_auth import TokenAuthMiddleware
-from chat import routing
 import os
 
 from channels.auth import AuthMiddlewareStack
@@ -12,6 +10,8 @@ os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'djangobnb_backend.settings')
 
 application = get_asgi_application()
 
+from chat import routing
+from chat.token_auth import TokenAuthMiddleware
 
 application = ProtocolTypeRouter({
     'http': get_asgi_application(),
